@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     AUTO_TASK: bool = True
     AUTO_CLAIM_SQUAD_BONUS: bool = False
 
+     RANDOM_DELAY_IN_RUN: list = [0, 25]
+    
     USE_PROXY_FROM_FILE: bool = False
 
 
