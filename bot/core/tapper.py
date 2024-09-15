@@ -186,7 +186,7 @@ class Tapper:
                     cexp = 0
                 self.btc_balance = int(float(data_response['balance_BTC'])) / self.multi
                 first_name = data_response['first_name'].replace('<', '').replace('>', '').replace('\\', '')
-                 logger.info(
+                logger.info(
                      f"Account name: {first_name} - Balance: <yellow>{data_response['balance_USD']}</yellow> - Btc balance: <yellow>{self.btc_balance}</yellow> - Power: <yellow>{cexp}</yellow> CEXP")
             except Exception as e:
                 logger.error(f"Error while getting user data: {e} .Try again after 30s")
