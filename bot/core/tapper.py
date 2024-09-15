@@ -44,7 +44,7 @@ class Tapper:
         self.version = app_version
         self.first_name = ''
         self.last_name = ''
-        self.user_id = ''
+        self.user_id = 0
         self.Total_Point_Earned = 0
         self.Total_Game_Played = 0
         self.btc_balance = 0
