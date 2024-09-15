@@ -1,7 +1,7 @@
 version: '3'
 services:
   bot:
-    container_name: 'cexioBot'
+    container_name: 'cexiobot'
     build:
       context: .
     stop_signal: SIGINT
