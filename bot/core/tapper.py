@@ -130,9 +130,11 @@ class Tapper:
             tg_web_data = unquote(
                 string=unquote(string=auth_url.split('tgWebAppData=')[1].split('&tgWebAppVersion')[0]))
 
-            self.user_id = tg_web_data.split('"id":')[1].split(',"first_name"')[0]
-            self.first_name = tg_web_data.split('"first_name":"')[1].split('","last_name"')[0]
-            self.last_name = tg_web_data.split('"last_name":"')[1].split('","username"')[0]
+             self.first_name = (tg_web_data.split('"first_name":"')[1].split('","last_name"')[0])
+             self.last_name = (tg_web_data.split('"last_name":"')[1].split('","username"')[0])
+             self.first_name = self.first_name.replace('<', '').replace('>', '').replace('\\', '')
+             self.last_name = self.last_name.replace('<', '').replace('>', '').replace('\\', '')
+             
 
             if self.tg_client.is_connected:
                 await self.tg_client.disconnect()
@@ -183,8 +185,9 @@ class Tapper:
                 except:
                     cexp = 0
                 self.btc_balance = int(float(data_response['balance_BTC'])) / self.multi
-                logger.info(
-                    f"Account name: {data_response['first_name']} - Balance: <yellow>{data_response['balance_USD']}</yellow> - Btc balance: <yellow>{self.btc_balance}</yellow> - Power: <yellow>{cexp}</yellow> CEXP")
+                first_name = data_response['first_name'].replace('<', '').replace('>', '').replace('\\', '')
+                 logger.info(
+                     f"Account name: {first_name} - Balance: <yellow>{data_response['balance_USD']}</yellow> - Btc balance: <yellow>{self.btc_balance}</yellow> - Power: <yellow>{cexp}</yellow> CEXP")
             except Exception as e:
                 logger.error(f"Error while getting user data: {e} .Try again after 30s")
                 await asyncio.sleep(30)
@@ -404,6 +407,7 @@ class Tapper:
             if response.status == 500:
                 self.skip.append(taskId)
             logger.error(f"{self.session_name} | <red>Failed to start task {taskId}. Response: {response.status}</red>")
+            await asyncio.sleep(5)
 
     async def getUserCard(self, http_client: aiohttp.ClientSession, authToken):
         data = {
@@ -523,7 +527,7 @@ class Tapper:
                     access_token_created_time = time()
                     token_live_time = randint(3500, 3600)
                     await asyncio.sleep(delay=randint(10, 15))
-                logger.info(f"Session {self.first_name} {self.last_name} logged in.")
+                logger.info(f"Session {self.session_name} logged in.")
                 # print(authToken)
                 await self.get_user_info(http_client, authToken)
                 if self.card is None or self.task is None:
