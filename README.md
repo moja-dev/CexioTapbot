@@ -16,7 +16,7 @@
 | Support for tdata / pyrogram .session / telethon .session     |        ✅        |
 
 
-## [Settings](https://github.com/vanhbakaa/Cexio-Tap-bot/blob/main/.env-example)
+## [Settings](https://github.com/moja-dev/CexioTapbot/blob/main/.env-example)
 | Settings | Description |
 |----------------------------|:-------------------------------------------------------------------------------------------------------------:|
 | **API_ID / API_HASH**      | Platform data from which to run the Telegram session (default - android)                                      |
@@ -30,6 +30,7 @@
 | **AUTO_TASK**              | Auto tasks (one time) ((eg. True))                                                                            |
 | **AUTO_CLAIM_SQUAD_BONUS** | Auto claim bonus from ref (one time) ((eg. False))                                                            |
 | **USE_PROXY_FROM_FILE**    | Whether to use a proxy from the bot/config/proxies.txt file (True / False)                                    |
+| **RANDOM_DELAY_IN_RUN**    |Random delay between run (e.g. [0, 45])                                                                        |
 
 
 ## Quick Start 📚
@@ -46,10 +47,10 @@ Before you begin, make sure you have the following installed:
 3. Record the API_ID and API_HASH provided after registering your application in the .env file.
 
 ## Installation
-You can download the [**repository**](https://github.com/vanhbakaa/Cexio-Tap-bot) by cloning it to your system and installing the necessary dependencies:
+You can download the [**repository**](https://github.com/moja-dev/CexioTapbot) by cloning it to your system and installing the necessary dependencies:
 ```shell
-git clone https://github.com/vanhbakaa/Cexio-Tap-bot.git
-cd Cexio-Tap-bot
+git clone https://github.com/moja-dev/CexioTapbot.git
+cd CexioTapbot
 ```
 
 Then you can do automatic installation by typing:
@@ -76,9 +77,9 @@ python3 main.py
 
 You can also use arguments for quick start, for example:
 ```shell
-~/Cexio-Tap-bot >>> python3 main.py --action (1/2)
+~/CexioTapbot >>> python3 main.py --action (1/2)
 # Or
-~/Cexio-Tap-bot >>> python3 main.py -a (1/2)
+~/CexioTapbot >>> python3 main.py -a (1/2)
 
 # 1 - Run clicker
 # 2 - Creates a session
@@ -96,13 +97,10 @@ python main.py
 
 You can also use arguments for quick start, for example:
 ```shell
-~/Cexio-Tap-bot >>> python main.py --action (1/2)
+~/CexioTapbot >>> python main.py --action (1/2)
 # Or
-~/Cexio-Tap-bot >>> python main.py -a (1/2)
+~/CexioTapbot >>> python main.py -a (1/2)
 
 # 1 - Run clicker
 # 2 - Creates a session
 ```
-### Contacts
-
-For support or questions, you can contact me [![Static Badge](https://img.shields.io/badge/Telegram-Channel-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/airdrop_tool_vanh)
