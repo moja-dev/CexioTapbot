@@ -130,10 +130,10 @@ class Tapper:
             tg_web_data = unquote(
                 string=unquote(string=auth_url.split('tgWebAppData=')[1].split('&tgWebAppVersion')[0]))
 
-             self.first_name = (tg_web_data.split('"first_name":"')[1].split('","last_name"')[0])
-             self.last_name = (tg_web_data.split('"last_name":"')[1].split('","username"')[0])
-             self.first_name = self.first_name.replace('<', '').replace('>', '').replace('\\', '')
-             self.last_name = self.last_name.replace('<', '').replace('>', '').replace('\\', '')
+            self.first_name = (tg_web_data.split('"first_name":"')[1].split('","last_name"')[0])
+            self.last_name = (tg_web_data.split('"last_name":"')[1].split('","username"')[0])
+            self.first_name = self.first_name.replace('<', '').replace('>', '').replace('\\', '')
+            self.last_name = self.last_name.replace('<', '').replace('>', '').replace('\\', '')
              
 
             if self.tg_client.is_connected:
