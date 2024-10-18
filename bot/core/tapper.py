@@ -52,7 +52,7 @@ class Tapper:
         self.task = None
         self.card = None
         self.startedTask = []
-        self.skip = ['register_on_cex_io', 'boost_telegram', 'play_piggypiggy_tap_game', 'join_btc_garden_twitter', 'subscribe_crypto_garden_telegram', 'subscribe_telegram', 'join_cedex_tap_game', 'join_wigwam_drum_game']
+        self.skip = ['register_on_cex_io', 'boost_telegram', 'play_piggypiggy_tap_game', 'join_btc_garden_twitter', 'subscribe_crypto_garden_telegram', 'subscribe_telegram', 'join_cedex_tap_game', 'join_wigwam_drum_game', 'WatchPowerTapGuidevideo', 'joinПро100Крипта', 'joinCryptoCab', 'joinEarningSikka']
         self.card1 = None
         self.potential_card = {}
         self.multi = 1000000
@@ -123,7 +123,7 @@ class Tapper:
                 bot=peer,
                 platform='android',
                 from_bot_menu=False,
-                url="https://cexp8.cex.io",
+                url="https://app.cexptap.com",
             ))
             auth_url = web_view.url
             # print(unquote(auth_url))
@@ -161,7 +161,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         # print(http_client.headers)
@@ -232,7 +232,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         response = await http_client.post(api_claimBTC, json=data)
@@ -253,7 +253,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         response = await http_client.post(api_priceData, json=data)
@@ -271,7 +271,7 @@ class Tapper:
             data = {
                 "devAuthData": int(self.user_id),
                 "authData": str(authToken),
-                "platform": "ios",
+                "platform": "android",
                 "data": {
                     "fromCcy": "BTC",
                     "toCcy": "USD",
@@ -293,7 +293,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         response = await http_client.post(api_checkref, json=data)
@@ -307,7 +307,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         response = await http_client.post(api_claimRef, json=data)
@@ -322,7 +322,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         response = await http_client.post(api_data, json=data)
@@ -338,7 +338,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         response = await http_client.post(api_checkCompletedTask, json=data)
@@ -360,7 +360,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {
                 "taskId": taskId
             }
@@ -376,7 +376,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {
                 "taskId": taskId
             }
@@ -395,7 +395,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {
                 "taskId": taskId
             }
@@ -413,7 +413,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {}
         }
         response = await http_client.post(api_getUserCard, json=data)
@@ -475,7 +475,7 @@ class Tapper:
         data = {
             "devAuthData": int(self.user_id),
             "authData": str(authToken),
-            "platform": "ios",
+            "platform": "android",
             "data": {
                 "categoryId": Buydata['categoryId'],
                 "ccy": Buydata['ccy'],
